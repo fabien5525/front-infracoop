@@ -15,8 +15,31 @@ a {
   box-sizing: border-box;
 }
 
-.connexion{
+#disponible{
+  background:green;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  border:2px solid #679403;
+   
+}
+#occupe{
+  background:red;
+  border-radius:50%;
+  width:30px;
+  height:30px;
+  border:2px solid orange;
+   
+}
+
+
+.listeVehicule{
   text-align: center;
+}
+
+.table{
+  text-align: center;
+  justify-content: center;
 }
 
 @media (prefers-color-scheme: dark) {

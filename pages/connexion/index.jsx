@@ -2,8 +2,9 @@ import Link from "next/link";
 const Connexion = () => {
   return (
     <>
+    <div className="  ">
       <h1>Connexion</h1>
-      <form className="Connexion">
+      <form className="justify-content-center">
         <div class="col-2">
           <label for="exampleInputEmail1" class="form-label">
             Adresse email
@@ -43,6 +44,7 @@ const Connexion = () => {
           Se connecter
         </button>
       </form>
+      </div>
     </>
   );
 };
