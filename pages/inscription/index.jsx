@@ -27,31 +27,44 @@ const Inscritpion = () => {
 
   return (
     <>
-      Inscription {email} {password} {passwordConfirm}
-      <div>
+      <h1>Inscription</h1>
+      <div class="Inscription">
+        <label htmlFor="">Votre email</label>
+      <div class="input-group mb-3">
         <input
           type="email"
+          class="form-control"
           placeholder="john.doe@example.com"
           onChange={(e) => {
             setEmail(e.currentTarget.value);
           }}
         />
+        </div>
+        <label htmlFor="">Mot de passe</label>
+        <div class="input-group mb-3">
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Mot de passe"
+            onChange={(e) => {
+              setPassword(e.currentTarget.value);
+            }}
+          />
+        </div>
+        <label htmlFor="">Confirmer votre mot de passe</label>
+        <div class="input-group mb-3">
         <input
           type="password"
-          placeholder="password"
-          onChange={(e) => {
-            setPassword(e.currentTarget.value);
-          }}
-        />
-        <input
-          type="password"
-          placeholder="confirm password"
+          class="form-control"
+          placeholder="Confirmer votre mot de passe"
           onChange={(e) => {
             setPasswordConfirm(e.currentTarget.value);
           }}
         />
+        </div>
         <input
           type="submit"
+          class="btn btn-dark"
           value="S'inscrire"
           onClick={(e) => handleSubmit(e)}
         />
