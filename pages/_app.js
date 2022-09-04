@@ -7,9 +7,11 @@ const Header = () => {
     <>
       <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
+        <img  class="logo-picture" src="/Logo.ico"></img>
           <a class="navbar-brand" href="/">
             Infracoop
           </a>
+          
           <button
             class="navbar-toggler"
             type="button"

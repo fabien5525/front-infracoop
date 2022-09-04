@@ -37,6 +37,10 @@ a {
   text-align: center;
 }
 
+.logo-picture {
+  width: 2%;
+}
+
 .table{
   text-align: center;
   justify-content: center;

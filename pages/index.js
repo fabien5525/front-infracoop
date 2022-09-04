@@ -44,6 +44,7 @@ export default function Home() {
       <div>
         <h1>Bienvenue sur Infracoop</h1>
       </div>
+
       <main className={styles.main}>
         EMAIL : {data.email} | PASSWORD : {data.password}
       </main>
