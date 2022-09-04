@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-const modif_vehicule = () => {
+const ajout_vehicule = () => {
   return (
     <>
       <br />
       <div className="table">
-        <h1>Modification du véhicule</h1>
+        <h1>Ajout d'un véhicule</h1>
         <div className="card text-center">
           <div className="card-header">
             <img src="" alt="Image du véhicule" />
@@ -109,17 +109,17 @@ const modif_vehicule = () => {
                 aria-describedby="basic-addon1"
               />
             </div>
-            <input
-              type="checkbox"
-              class="form-check-input"
-              id="exampleCheck1"
-            />
-            <label class="form-check-label" for="exampleCheck1">
-              Disponible
-            </label>
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+              />
+              <label class="form-check-label" for="exampleCheck1">
+                Disponible
+              </label>
           </div>
           <Link href="/liste_voiture">
-            <button className="btn btn-dark">Modifier le véhicule</button>
+          <button className="btn btn-dark">Ajouter le véhicule</button>
           </Link>
         </div>
       </div>
@@ -127,4 +127,4 @@ const modif_vehicule = () => {
   );
 };
 
-export default modif_vehicule;
+export default ajout_vehicule;

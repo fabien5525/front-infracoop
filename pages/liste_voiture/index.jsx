@@ -46,12 +46,12 @@ const Liste = () => {
               </td>
               <td>
                 <Link href={"/modif_vehicule"}>
-                  <a>Modifier</a>
+                <button className="btn btn-dark">Modifier</button>
                 </Link>
               </td>
               <td>
                 <Link href={"/suppr_vehicule"}>
-                  <a>Supprimer</a>
+                <button className="btn btn-dark">Supprimer</button>
                 </Link>
               </td>
             </tr>
@@ -75,12 +75,14 @@ const Liste = () => {
               </td>
               <td>
               <Link href={"/modif_vehicule"}>
-                <a>Modifier</a>
+              <button className="btn btn-dark">
+                Modifier
+              </button>
               </Link>
               </td>
               <td>
               <Link href={"/suppr_vehicule"}>
-                <a>Supprimer</a>
+                <button className="btn btn-dark">Supprimer</button>
               </Link>
               </td>
             </tr>
