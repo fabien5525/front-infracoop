@@ -28,7 +28,8 @@ const Liste = () => {
           <tbody>
             <tr>
               <th scope="row">
-                <img src="clio.jpg" alt="Image voiture" />
+                <img src="/clio.jpg" alt="Image voiture" 
+                width={100}/>
               </th>
               <td>Renault</td>
               <td>Clio 4</td>
@@ -57,7 +58,8 @@ const Liste = () => {
             </tr>
             <tr>
               <th scope="row">
-                <img src="" alt="Image voiture" />
+                <img src="/peugeot.jpg" alt="Image voiture" 
+                width={100}/>
               </th>
               <td>Peugeot</td>
               <td>205</td>
