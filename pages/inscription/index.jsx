@@ -5,6 +5,12 @@ const Inscritpion = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [nom, setNom] = useState("");
+  const [prenom, setPrenom] = useState("");
+  const [date, setDate] = useState("");
+  const [adresse, setAdresse] = useState("");
+  const [telephone, setTelephone] = useState("");
+  const [permis, setPermis] = useState("");
 
   const handleSubmit = (e) => {
     if (email !== "" && password !== "" && passwordConfirm !== "") {
@@ -14,6 +20,12 @@ const Inscritpion = () => {
           .post("http://www.5525.fr/utilisateurs", {
             email: email,
             password: password,
+            nom: nom,
+            prenom: prenom,
+            date: date,
+            adresse: adresse,
+            telephone: telephone,
+            permis: permis, 
           })
           .then((response) => {
             console.log(response.status, response.data);
@@ -30,30 +42,79 @@ const Inscritpion = () => {
       <div className="col-2">
         <h1>Inscription</h1>
         <div class="Inscription">
+
           <label htmlFor="">Nom</label>
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Doe" />
+            <input 
+            type="nom" 
+            class="form-control" 
+            placeholder="Doe" 
+            onChange={(e) => {
+              setNom(e.currentTarget.value);
+            }}
+            />
           </div>
+
           <label htmlFor="">Prénom</label>
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="John" />
+            <input 
+            type="prenom" 
+            class="form-control" 
+            placeholder="John"
+            onChange={(e) => {
+              setPrenom(e.currentTarget.value);
+            }} 
+            />
           </div>
+
           <label htmlFor="">Date de naissance</label>
           <div class="input-group">
-            <input type="date" class="form-control" placeholder="" />
+            <input 
+            type="date" 
+            class="form-control" 
+            placeholder="" 
+            onChange={(e) => {
+              setDate(e.currentTarget.value);
+            }}
+            />
           </div>
+
           <label htmlFor="">Adresse</label>
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Votre adresse" />
+            <input 
+            type="adresse" 
+            class="form-control" 
+            placeholder="Votre adresse"
+            onChange={(e) => {
+              setAdresse(e.currentTarget.value);
+            }} 
+            />
           </div>
+
           <label htmlFor="">N° de téléphone</label>
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Votre n° de téléphone" />
+            <input 
+            type="telephone" 
+            class="form-control" 
+            placeholder="Votre n° de téléphone"
+            onChange={(e) => {
+              setTelephone(e.currentTarget.value);
+            }} 
+            />
           </div>
+
           <label htmlFor="">N° de permis</label>
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Votre n° de permis" />
+            <input 
+              type="permis" 
+              class="form-control" 
+              placeholder="Votre n° de permis"
+              onChange={(e) => {
+                setPermis(e.currentTarget.value);
+                }}             
+              />
           </div>
+
           <label htmlFor="">Votre email</label>
           <div class="input-group">
             <input

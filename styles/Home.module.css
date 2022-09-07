@@ -108,7 +108,11 @@
   margin-left: 0.5rem;
 }
 
+.Carousel {
+  height: 150px;
+  width: 200px;
 
+}
 @media (max-width: 600px) {
   .grid {
     width: 100%;
