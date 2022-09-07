@@ -8,7 +8,16 @@ const ajout_vehicule = () => {
         <h1>Ajout d'un véhicule</h1>
         <div className="card text-center">
           <div className="card-header">
-            <img src="" alt="Image du véhicule" />
+            <div class="mb-3">
+              <label for="formFileSm" class="form-label">
+                Charger l'image de votre voiture
+              </label>
+              <input
+                class="form-control form-control-sm"
+                id="formFileSm"
+                type="file"
+              />
+            </div>
           </div>
           <div className="card-body">
             <h5 className="card-title">
@@ -109,17 +118,17 @@ const ajout_vehicule = () => {
                 aria-describedby="basic-addon1"
               />
             </div>
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-              <label class="form-check-label" for="exampleCheck1">
-                Disponible
-              </label>
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1">
+              Disponible
+            </label>
           </div>
           <Link href="/liste_voiture">
-          <button className="btn btn-dark">Ajouter le véhicule</button>
+            <button className="btn btn-dark">Ajouter le véhicule</button>
           </Link>
         </div>
       </div>

@@ -8,7 +8,7 @@ const modif_vehicule = () => {
         <h1>Modification du véhicule</h1>
         <div className="card text-center">
           <div className="card-header">
-            <img src="" alt="Image du véhicule" />
+            <img src="/clio.jpg" alt="Image du véhicule" width={200} />
           </div>
           <div className="card-body">
             <h5 className="card-title">
@@ -68,7 +68,7 @@ const modif_vehicule = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="N] d'immatriculation"
+                placeholder="N° d'immatriculation"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
               />

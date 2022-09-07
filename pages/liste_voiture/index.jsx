@@ -28,7 +28,7 @@ const Liste = () => {
           <tbody>
             <tr>
               <th scope="row">
-                <img src="/clio.jpg" alt="Image voiture" 
+                <img src="/clio.jpg" alt="logo-picture" 
                 width={100}/>
               </th>
               <td>Renault</td>

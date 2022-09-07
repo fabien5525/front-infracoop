@@ -4,8 +4,8 @@ import { useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import axios from "axios";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+//import "react-responsive-carousel/lib/styles/carousel.min.css";
+//import { Carousel } from 'react-responsive-carousel';
 
 export default function Home() {
   const [data, setData] = useState({
@@ -49,7 +49,7 @@ export default function Home() {
       <main className={styles.main}>
       <h2> Les véhicules disponibles à la location :</h2>
         <div class="Carousel">
-          <Carousel>
+          {/* <Carousel>
             <div>
                 <img src="/BMWCE04Img.jpg" alt="image1"/>
                 <p className="legend">Scooter BMW-CE 04</p>
@@ -74,7 +74,7 @@ export default function Home() {
                 <img src="/YamahaE01Img.jpeg" alt="image5"/>
                 <p className="legend">Scooter Yamaha E-01</p>
             </div>
-          </Carousel>
+          </Carousel> */}
         </div>
         EMAIL : {data.email} | PASSWORD : {data.password}
       </main>
