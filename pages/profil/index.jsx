@@ -1,12 +1,23 @@
+import Link from "next/link";
+
 const Profil = () => {
   return (
     <>
       <div className="table">
         <h1>Mon profil</h1>
-        <button className="btn btn-dark">
-          Modifier mon adresse email
-        </button>
-        <button className="btn btn-dark">Modifier mon mot de passe</button>
+        <br />
+        <h3>Nom Prénom</h3>
+        <p>Email: nom.prenom@test.fr</p>
+        <p>Adresse: 1 rue de la paix, 78180 Montigny-le-Bretonneux</p>
+        <br />
+        <Link href={"/modif-mail"}>
+        <button className="btn btn-dark">Modifier mon adresse email</button>
+        </Link>
+        <br />
+        <br />
+        <Link href={"/modif-mdp"}>
+          <button className="btn btn-dark">Modifier mon mot de passe</button>
+        </Link>
         <table className="table">
           <thead>
             <tr>
