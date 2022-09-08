@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const EnLocation = () => {
     return (
@@ -12,7 +13,7 @@ const EnLocation = () => {
               <th scope="col">Marque</th>
               <th scope="col">Modèle</th>
               <th scope="col">Couleur</th>
-              <th scope="col">Plaque d'immatriculation</th>
+              <th scope="col">{`Plaque d'immatriculation`}</th>
               <th scope="col">Kilométrage</th>
               <th scope="col">Prix journalier</th>
               <th scope="col">Date de location</th>
@@ -23,8 +24,8 @@ const EnLocation = () => {
           <tbody>
             <tr>
               <th scope="row">
-                <img src="/clio.jpg" alt="logo-picture" 
-                width={100}/>
+                <Image src="/clio.jpg" alt="logo-picture" 
+                width={100} height={100}/>
               </th>
               <td>Renault</td>
               <td>Clio 4</td>
@@ -41,8 +42,8 @@ const EnLocation = () => {
             </tr>
             <tr>
               <th scope="row">
-                <img src="/peugeot.jpg" alt="Image voiture" 
-                width={100}/>
+                <Image src="/peugeot.jpg" alt="Image voiture" 
+                width={100} height/>
               </th>
               <td>Peugeot</td>
               <td>205</td>
