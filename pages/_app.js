@@ -1,19 +1,25 @@
 import "../styles/globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect } from "react";
+
+//import boostrap
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Header = () => {
   return (
     <>
-      <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-        <img  class="logo-picture" src="/Logo.ico"></img>
-          <a class="navbar-brand" href="/">
-            Infracoop
-          </a>
-          
+      <nav className="navbar navbar-dark bg-dark">
+        <div className="container-fluid">
+          <Image className="logo-picture"  src="/logo.ico" alt="logo" width="32" height="32"></Image>
+          <Link href="/">
+            <a className="navbar-brand" >
+              Infracoop
+            </a>
+          </Link>
+
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -21,28 +27,28 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item">
                 <Link href="/">
-                  <a class="nav-link">Accueil</a>
+                  <a className="nav-link">Accueil</a>
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link href="/connexion">
-                  <a class="nav-link">Connexion</a>
+                  <a className="nav-link">Connexion</a>
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link href="/inscription">
-                  <a class="nav-link">Inscription</a>
+                  <a className="nav-link">Inscription</a>
                 </Link>
               </li>
-              <li class="nav-item">
+              <li className="nav-item">
                 <Link href="/liste_voiture">
-                  <a class="nav-link">Liste de véhicules</a>
+                  <a className="nav-link">Liste de véhicules</a>
                 </Link>
               </li>
             </ul>
@@ -54,26 +60,14 @@ const Header = () => {
 };
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, [])
+
   return (
     <>
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-        crossorigin="anonymous"
-      ></link>
       <Header></Header>
       <Component {...pageProps} />
-      <script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-        crossorigin="anonymous"
-      ></script>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-        crossorigin="anonymous"
-      ></script>
     </>
   );
 }

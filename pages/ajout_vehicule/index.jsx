@@ -5,15 +5,15 @@ const ajout_vehicule = () => {
     <>
       <br />
       <div className="table">
-        <h1>Ajout d'un véhicule</h1>
+        <h1>{`Ajout d'un véhicule`}</h1>
         <div className="card text-center">
           <div className="card-header">
-            <div class="mb-3">
-              <label for="formFileSm" class="form-label">
-                Charger l'image de votre voiture
+            <div className="mb-3">
+              <label htmlFor="formFileSm" className="form-label">
+                {`Charger l'image de votre voiture`}
               </label>
               <input
-                class="form-control form-control-sm"
+                className="form-control form-control-sm"
                 id="formFileSm"
                 type="file"
               />
@@ -72,7 +72,7 @@ const ajout_vehicule = () => {
             </div>
             <div className="input-group col-2">
               <span className="input-group-text" id="basic-addon1">
-                Plaque d'immatriculation
+                {`Plaque d'immatriculation`}
               </span>
               <input
                 type="text"
@@ -96,7 +96,7 @@ const ajout_vehicule = () => {
             </div>
             <div className="input-group col-2">
               <span className="input-group-text" id="basic-addon1">
-                Date d'achat
+                {`Date d'achat`}
               </span>
               <input
                 type="text"
@@ -120,10 +120,10 @@ const ajout_vehicule = () => {
             </div>
             <input
               type="checkbox"
-              class="form-check-input"
+              className="form-check-input"
               id="exampleCheck1"
             />
-            <label class="form-check-label" for="exampleCheck1">
+            <label className="form-check-label" htmlFor="exampleCheck1">
               Disponible
             </label>
           </div>

@@ -7,7 +7,7 @@ const Profil = () => {
           Modifier mon adresse email
         </button>
         <button className="btn btn-dark">Modifier mon mot de passe</button>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Vehicule</th>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const ReserverVehicule = () => {
   return (
@@ -32,11 +33,11 @@ const ReserverVehicule = () => {
         </div>
         <br />
         <h2>Résumé de la commande</h2>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Véhicule</th>
-              <th scope="col">Plaque d'immatriculation</th>
+              <th scope="col">{`Plaque d'immatriculation`}</th>
               <th scope="col">Prix journalier</th>
               <th scope="col">Nombre de jour de location</th>
               <th scope="col">Coût total</th>
@@ -44,7 +45,7 @@ const ReserverVehicule = () => {
           </thead>
           <tbody>
             <td>
-              <img src="/clio.jpg" alt="logo-picture" width={100} />
+              <Image src="/clio.jpg" alt="logo-picture" width={100} layout="fill"/>
             </td>
             <td>AB 123 CD</td>
             <td>15€</td>

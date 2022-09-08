@@ -5,32 +5,32 @@ const Connexion = () => {
     <div className="  ">
       <h1>Connexion</h1>
       <form className="justify-content-center">
-        <div class="col-2">
-          <label for="exampleInputEmail1" class="form-label">
+        <div className="col-2">
+          <label htmlFor="exampleInputEmail1" className="form-label">
             Adresse email
           </label>
           <input
             type="email"
-            class="form-control"
+            className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
             placeholder="Votre adresse email"
           />
         </div>
-        <div class="col-2">
-          <label for="exampleInputPassword1" class="form-label">
+        <div className="col-2">
+          <label htmlFor="exampleInputPassword1" className="form-label">
             Mot de passe
           </label>
           <input
             type="password"
-            class="form-control"
+            className="form-control"
             id="exampleInputPassword1"
             placeholder="Votre mot de passe"
           />
         </div>
-        <div class="col-2 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-          <label class="form-check-label" for="exampleCheck1">
+        <div className="col-2 form-check">
+          <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+          <label className="form-check-label" htmlFor="exampleCheck1">
             Se souvenir de moi
           </label>
         </div>
@@ -40,7 +40,7 @@ const Connexion = () => {
           </Link>
         </div>
         <br />
-        <button type="submit" class="btn btn-dark">
+        <button type="submit" className="btn btn-dark">
           Se connecter
         </button>
       </form>

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 const Liste = () => {
   return (
     <>
@@ -9,14 +11,14 @@ const Liste = () => {
             Ajouter un véhicule
           </button>
         </Link>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Apercu</th>
               <th scope="col">Marque</th>
               <th scope="col">Modèle</th>
               <th scope="col">Couleur</th>
-              <th scope="col">Plaque d'immatriculation</th>
+              <th scope="col">{`Plaque d'immatriculation`}</th>
               <th scope="col">Kilométrage</th>
               <th scope="col">Prix journalier</th>
               <th scope="col"></th>
@@ -28,8 +30,8 @@ const Liste = () => {
           <tbody>
             <tr>
               <th scope="row">
-                <img src="/clio.jpg" alt="logo-picture" 
-                width={100}/>
+                <Image src="/clio.jpg" alt="logo-picture" 
+                width="100" height="75"/>
               </th>
               <td>Renault</td>
               <td>Clio 4</td>
@@ -58,8 +60,8 @@ const Liste = () => {
             </tr>
             <tr>
               <th scope="row">
-                <img src="/peugeot.jpg" alt="Image voiture" 
-                width={100}/>
+                <Image src="/peugeot.jpg" alt="Image voiture" 
+                width="100" height="75"/>
               </th>
               <td>Peugeot</td>
               <td>205</td>

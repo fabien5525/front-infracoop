@@ -41,13 +41,13 @@ const Inscritpion = () => {
     <>
       <div className="col-2">
         <h1>Inscription</h1>
-        <div class="Inscription">
+        <div className="Inscription">
 
           <label htmlFor="">Nom</label>
-          <div class="input-group">
+          <div className="input-group">
             <input 
             type="nom" 
-            class="form-control" 
+            className="form-control" 
             placeholder="Doe" 
             onChange={(e) => {
               setNom(e.currentTarget.value);
@@ -56,10 +56,10 @@ const Inscritpion = () => {
           </div>
 
           <label htmlFor="">Prénom</label>
-          <div class="input-group">
+          <div className="input-group">
             <input 
             type="prenom" 
-            class="form-control" 
+            className="form-control" 
             placeholder="John"
             onChange={(e) => {
               setPrenom(e.currentTarget.value);
@@ -68,10 +68,10 @@ const Inscritpion = () => {
           </div>
 
           <label htmlFor="">Date de naissance</label>
-          <div class="input-group">
+          <div className="input-group">
             <input 
             type="date" 
-            class="form-control" 
+            className="form-control" 
             placeholder="" 
             onChange={(e) => {
               setDate(e.currentTarget.value);
@@ -80,10 +80,10 @@ const Inscritpion = () => {
           </div>
 
           <label htmlFor="">Adresse</label>
-          <div class="input-group">
+          <div className="input-group">
             <input 
             type="adresse" 
-            class="form-control" 
+            className="form-control" 
             placeholder="Votre adresse"
             onChange={(e) => {
               setAdresse(e.currentTarget.value);
@@ -92,10 +92,10 @@ const Inscritpion = () => {
           </div>
 
           <label htmlFor="">N° de téléphone</label>
-          <div class="input-group">
+          <div className="input-group">
             <input 
             type="telephone" 
-            class="form-control" 
+            className="form-control" 
             placeholder="Votre n° de téléphone"
             onChange={(e) => {
               setTelephone(e.currentTarget.value);
@@ -104,10 +104,10 @@ const Inscritpion = () => {
           </div>
 
           <label htmlFor="">N° de permis</label>
-          <div class="input-group">
+          <div className="input-group">
             <input 
               type="permis" 
-              class="form-control" 
+              className="form-control" 
               placeholder="Votre n° de permis"
               onChange={(e) => {
                 setPermis(e.currentTarget.value);
@@ -116,10 +116,10 @@ const Inscritpion = () => {
           </div>
 
           <label htmlFor="">Votre email</label>
-          <div class="input-group">
+          <div className="input-group">
             <input
               type="email"
-              class="form-control"
+              className="form-control"
               placeholder="john.doe@example.com"
               onChange={(e) => {
                 setEmail(e.currentTarget.value);
@@ -127,10 +127,10 @@ const Inscritpion = () => {
             />
           </div>
           <label htmlFor="">Mot de passe</label>
-          <div class="input-group">
+          <div className="input-group">
             <input
               type="password"
-              class="form-control"
+              className="form-control"
               placeholder="Mot de passe"
               onChange={(e) => {
                 setPassword(e.currentTarget.value);
@@ -138,10 +138,10 @@ const Inscritpion = () => {
             />
           </div>
           <label htmlFor="">Confirmer votre mot de passe</label>
-          <div class="input-group mb-3">
+          <div className="input-group mb-3">
             <input
               type="password"
-              class="form-control"
+              className="form-control"
               placeholder="Confirmer votre mot de passe"
               onChange={(e) => {
                 setPasswordConfirm(e.currentTarget.value);
@@ -150,7 +150,7 @@ const Inscritpion = () => {
           </div>
           <input
             type="submit"
-            class="btn btn-dark"
+            className="btn btn-dark"
             value="S'inscrire"
             onClick={(e) => handleSubmit(e)}
           />

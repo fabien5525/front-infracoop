@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const modif_vehicule = () => {
   return (
@@ -8,7 +9,7 @@ const modif_vehicule = () => {
         <h1>Modification du véhicule</h1>
         <div className="card text-center">
           <div className="card-header">
-            <img src="/clio.jpg" alt="Image du véhicule" width={200} />
+            <Image src="/clio.jpg" alt="Image du véhicule" width={200} layout="fill"/>
           </div>
           <div className="card-body">
             <h5 className="card-title">
@@ -63,7 +64,7 @@ const modif_vehicule = () => {
             </div>
             <div className="input-group col-2">
               <span className="input-group-text" id="basic-addon1">
-                Plaque d'immatriculation
+                {`Plaque d'immatriculation`}
               </span>
               <input
                 type="text"
@@ -87,7 +88,7 @@ const modif_vehicule = () => {
             </div>
             <div className="input-group col-2">
               <span className="input-group-text" id="basic-addon1">
-                Date d'achat
+                {`Date d'achat`}
               </span>
               <input
                 type="text"
@@ -111,10 +112,10 @@ const modif_vehicule = () => {
             </div>
             <input
               type="checkbox"
-              class="form-check-input"
+              className="form-check-input"
               id="exampleCheck1"
             />
-            <label class="form-check-label" for="exampleCheck1">
+            <label className="form-check-label" htmlFor="exampleCheck1">
               Disponible
             </label>
           </div>

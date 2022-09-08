@@ -5,7 +5,7 @@ const EnLocation = () => {
         <>
             <div className="listeVehicule">
         <h1>Les véhicules en cours de location</h1>
-        <table class="table">
+        <table className="table">
           <thead>
             <tr>
               <th scope="col">Apercu</th>

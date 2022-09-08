@@ -40,7 +40,7 @@ export default function Home() {
       <Head>
         <title>Infracoop</title>
         <meta name="description" content="Site de location de véhicule en ligne" />
-        <link rel="icon" href="/Logo.ico" />
+        <link rel="icon" href="./Logo.ico" />
       </Head>
 
       <div>
