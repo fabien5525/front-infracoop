@@ -48,7 +48,7 @@ export default function Home() {
       </div>
       <main className={styles.main}>
       <h2> Les véhicules disponibles à la location :</h2>
-        <div class="Carousel">
+        <div className="Carousel">
           {/* <Carousel>
             <div>
                 <img src="/BMWCE04Img.jpg" alt="image1"/>
