@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import axios from "axios";
 
-const ajout_vehicule = () => {
+const Ajout_vehicule = () => {
   const [marque, setMarque] = useState("");
   const [type, setType] = useState("");
   const [modele, setModele] = useState("");
@@ -190,4 +190,4 @@ const ajout_vehicule = () => {
   );
 };
 
-export default ajout_vehicule;
+export default Ajout_vehicule;
