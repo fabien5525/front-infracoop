@@ -1,14 +1,51 @@
 import Link from "next/link";
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
 
-const Profil = () => {
+export default function Home() {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    nom: "",
+    prenom: "",
+    adresse: "",
+  });
+
+  useEffect(() => {
+    //didMount
+    console.log("AXIOS");
+    axios
+      .get("http://www.5525.fr/utilisateurs/2")
+      .then((response) => {
+        setData({
+          email: response.data.email,
+          password: response.data.password,
+          prenom: response.data.prenom,
+          nom: response.data.nom,
+          adresse: response.data.nom,
+        });
+        console.log("DATA", data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    return () => {
+      //unMount
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+
   return (
     <>
       <div className="table">
         <h1>Mon profil</h1>
         <br />
-        <h3>Nom Prénom</h3>
-        <p>Email: nom.prenom@test.fr</p>
-        <p>Adresse: 1 rue de la paix, 78180 Montigny-le-Bretonneux</p>
+        <h3> {data.nom} {data.prenom}</h3>
+        <p>Email: {data.email}</p>
+        <p>Votre adresse : {data.adresse}</p>
         <br />
         <Link href={"/modif-mail"}>
         <button className="btn btn-dark">Modifier mon adresse email</button>
@@ -43,4 +80,4 @@ const Profil = () => {
   );
 };
 
-export default Profil;
+

@@ -6,12 +6,12 @@ const ModifMail = () => {
         <label htmlFor="">Votre nouvelle adresse email</label>
         <div className="input-group">
           <input
-            type="password"
+            type="email"
             className="form-control"
             placeholder="Adresse email"
           />
         </div>
-        <button type="submit" className="btn btn-dark">Changer de mot de passe</button>
+        <button type="submit" className="btn btn-dark">Changer mon adresse mail</button>
       </div>
     </>
   );
