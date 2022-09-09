@@ -51,6 +51,11 @@ const Header = () => {
                   <a className="nav-link">Liste de véhicules</a>
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link href="/profil">
+                  <a className="nav-link">Mon Profil</a>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

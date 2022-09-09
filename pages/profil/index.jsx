@@ -18,7 +18,6 @@ export default function Home() {
     console.log("AXIOS");
     axios
       .get("http://www.5525.fr/utilisateurs/2")
-      .get("")
       .then((response) => {
         setData({
           email: response.data.email,

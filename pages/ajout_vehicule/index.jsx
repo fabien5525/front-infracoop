@@ -3,28 +3,28 @@ import { useState } from "react";
 import axios from "axios";
 
 const Ajout_vehicule = () => {
-  const [marque, setMarque] = useState("");
-  const [type, setType] = useState("");
-  const [modele, setModele] = useState("");
-  const [numSerie, setNumSerie] = useState("");
-  const [couleur, setCouleur] = useState("");
-  const [plaque, setPlaque] = useState("");
-  const [km, setKm] = useState("");
-  const [dateAchat, setDateAchat] = useState("");
-  const [prixAchat, setPrixAchat] = useState("");
+  const [Marque, setMarque] = useState("");
+  const [Type, setType] = useState("");
+  const [Modele, setModele] = useState("");
+  const [NumeroDeSerie, setNumSerie] = useState("");
+  const [Couleur, setCouleur] = useState("");
+  const [PlaqueDImmatriculation, setPlaque] = useState("");
+  const [Kilometre, setKm] = useState("");
+  const [DateDAchat, setDateAchat] = useState("");
+  const [PrixDAchat, setPrixAchat] = useState("");
 
   const handleSubmit = (e) => {
     axios
       .post("http://www.5525.fr/vehicules", {
-        type: type,
-        marque: marque,
-        modele: modele,
-        numeroDeSerie: numSerie,
-        couleur: couleur,
-        plaqueDImmatriculation: plaque,
-        kilometre: km,
-        dateDAchat: dateAchat,
-        PrixDAchat: prixAchat
+        Type: Type,
+        Marque: Marque,
+        Modele: Modele,
+        NumeroDeSerie: NumeroDeSerie,
+        Couleur: Couleur,
+        PlaqueDImmatriculation: PlaqueDImmatriculation,
+        Kilometre: Kilometre,
+        DateDAchat: DateDAchat,
+        PrixDAchat: PrixDAchat,
       })
       .then((response) => {
         console.log(response.status, response.data);
