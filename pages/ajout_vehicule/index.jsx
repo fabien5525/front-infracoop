@@ -1,26 +1,61 @@
 import Link from "next/link";
+import { useState } from "react";
+import axios from "axios";
 
 const ajout_vehicule = () => {
+  const [marque, setMarque] = useState("");
+  const [type, setType] = useState("");
+  const [modele, setModele] = useState("");
+  const [numSerie, setNumSerie] = useState("");
+  const [couleur, setCouleur] = useState("");
+  const [plaque, setPlaque] = useState("");
+  const [km, setKm] = useState("");
+  const [dateAchat, setDateAchat] = useState("");
+  const [prixAchat, setPrixAchat] = useState("");
+
+  const handleSubmit = (e) => {
+    axios
+      .post("http://www.5525.fr/vehicules", {
+        type: type,
+        marque: marque,
+        modele: modele,
+        numeroDeSerie: numSerie,
+        couleur: couleur,
+        plaqueDImmatriculation: plaque,
+        kilometre: km,
+        dateDAchat: dateAchat,
+        PrixDAchat: prixAchat
+      })
+      .then((response) => {
+        console.log(response.status, response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <>
       <br />
       <div className="table">
         <h1>{`Ajout d'un véhicule`}</h1>
         <div className="card text-center">
-          <div className="card-header">
-            <div className="mb-3">
-              <label htmlFor="formFileSm" className="form-label">
-                {`Charger l'image de votre voiture`}
-              </label>
-              <input
-                className="form-control form-control-sm"
-                id="formFileSm"
-                type="file"
-              />
-            </div>
-          </div>
           <div className="card-body">
-            <h5 className="card-title">
+              <div className="input-group col-2">
+                <span className="input-group-text" id="basic-addon1">
+                  Type
+                </span>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Scooter ou voiture"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  onChange={(e) => {
+                    setType(e.currentTarget.value);
+                  }}
+                />
+              </div>
               <div className="input-group col-2">
                 <span className="input-group-text" id="basic-addon1">
                   Marque
@@ -31,9 +66,11 @@ const ajout_vehicule = () => {
                   placeholder="Le nom de la marque"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
+                  onChange={(e) => {
+                    setMarque(e.currentTarget.value);
+                  }}
                 />
               </div>
-            </h5>
             <div className="input-group col-2">
               <span className="input-group-text" id="basic-addon1">
                 Modèle
@@ -44,6 +81,9 @@ const ajout_vehicule = () => {
                 placeholder="Le modèle"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                onChange={(e) => {
+                  setModele(e.currentTarget.value);
+                }}
               />
             </div>
             <div className="input-group col-2">
@@ -56,6 +96,9 @@ const ajout_vehicule = () => {
                 placeholder="Le numéro de série"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                onChange={(e) => {
+                  setNumSerie(e.currentTarget.value);
+                }}
               />
             </div>
             <div className="input-group col-2">
@@ -68,6 +111,9 @@ const ajout_vehicule = () => {
                 placeholder="Couleur du véhicule"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                onChange={(e) => {
+                  setCouleur(e.currentTarget.value);
+                }}
               />
             </div>
             <div className="input-group col-2">
@@ -80,6 +126,9 @@ const ajout_vehicule = () => {
                 placeholder="N] d'immatriculation"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                onChange={(e) => {
+                  setPlaque(e.currentTarget.value);
+                }}
               />
             </div>
             <div className="input-group col-2">
@@ -92,6 +141,9 @@ const ajout_vehicule = () => {
                 placeholder="Le kilomètrage du véhicule"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                onChange={(e) => {
+                  setKm(e.currentTarget.value);
+                }}
               />
             </div>
             <div className="input-group col-2">
@@ -104,6 +156,9 @@ const ajout_vehicule = () => {
                 placeholder="Date d'achat"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                onChange={(e) => {
+                  setDateAchat(e.currentTarget.value);
+                }}
               />
             </div>
             <div className="input-group col-2">
@@ -116,19 +171,18 @@ const ajout_vehicule = () => {
                 placeholder="Le prix de la location journalière"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                onChange={(e) => {
+                  setPrixAchat(e.currentTarget.value);
+                }}
               />
             </div>
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              Disponible
-            </label>
           </div>
           <Link href="/liste_voiture">
-            <button className="btn btn-dark">Ajouter le véhicule</button>
+            <input
+              type="submit"
+              value="Ajouter le véhicule"
+              onClick={(e) => handleSubmit(e)}
+            />
           </Link>
         </div>
       </div>
