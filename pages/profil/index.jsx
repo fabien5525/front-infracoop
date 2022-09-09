@@ -10,6 +10,7 @@ export default function Home() {
     nom: "",
     prenom: "",
     adresse: "",
+    modele: "",
   });
 
   useEffect(() => {
@@ -17,6 +18,7 @@ export default function Home() {
     console.log("AXIOS");
     axios
       .get("http://www.5525.fr/utilisateurs/2")
+      .get("")
       .then((response) => {
         setData({
           email: response.data.email,
@@ -66,7 +68,7 @@ export default function Home() {
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Clio 4</th>
+              <th scope="row">Clio 4{data.modele}</th>
               <td>150€</td>
               <td>04/09/2022</td>
               <td>
