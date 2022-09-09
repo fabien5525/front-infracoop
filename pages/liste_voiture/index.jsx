@@ -14,7 +14,6 @@ const Liste = () => {
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">Apercu</th>
               <th scope="col">Marque</th>
               <th scope="col">Modèle</th>
               <th scope="col">Couleur</th>
@@ -29,10 +28,6 @@ const Liste = () => {
           </thead>
           <tbody>
             <tr>
-              <th scope="row">
-                <Image src="/clio.jpg" alt="logo-picture" 
-                width="100" height="75"/>
-              </th>
               <td>Renault</td>
               <td>Clio 4</td>
               <td>Bleu</td>
@@ -59,10 +54,6 @@ const Liste = () => {
               </td>
             </tr>
             <tr>
-              <th scope="row">
-                <Image src="/peugeot.jpg" alt="Image voiture" 
-                width="100" height="75"/>
-              </th>
               <td>Peugeot</td>
               <td>205</td>
               <td>Grise</td>

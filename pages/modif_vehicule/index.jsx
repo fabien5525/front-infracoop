@@ -8,9 +8,6 @@ const modif_vehicule = () => {
       <div className="table">
         <h1>Modification du véhicule</h1>
         <div className="card text-center">
-          <div className="card-header">
-            <Image src="/clio.jpg" alt="Image du véhicule" width={200} layout="fill"/>
-          </div>
           <div className="card-body">
             <h5 className="card-title">
               <div className="input-group col-2">
