@@ -4,39 +4,21 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 export default function Home() {
-  const [data, setData] = useState({
-    email: "",
-    password: "",
-    nom: "",
-    prenom: "",
-    adresse: "",
-    modele: "",
-  });
+  const [Profil, setProfil] = useState([]);
 
   useEffect(() => {
-    //didMount
-    console.log("AXIOS");
     axios
-      .get("http://www.5525.fr/utilisateurs/2")
-      .then((response) => {
-        setData({
-          email: response.data.email,
-          password: response.data.password,
-          prenom: response.data.prenom,
-          nom: response.data.nom,
-          adresse: response.data.nom,
-        });
-        console.log("DATA", data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-
-    return () => {
-      //unMount
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    .get("http://www.5525.fr/clients/2", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+    .then((response) => {
+      console.log(response.data[0]);
+      setProfil(response.data);
+    });
+}, []);
 
 
   return (
@@ -44,9 +26,10 @@ export default function Home() {
       <div className="table">
         <h1>Mon profil</h1>
         <br />
-        <h3> {data.nom} {data.prenom}</h3>
-        <p>Email: {data.email}</p>
-        <p>Votre adresse : {data.adresse}</p>
+        <h3> {Profil.Nom} {Profil.Prenom}</h3>
+        {/* <p>Email: {Profil.email}</p> */}
+        <p>Email: john.doe@test.fr</p>
+        <p>Votre adresse : {Profil.Adresse}</p>
         <br />
         <Link href={"/modif-mail"}>
         <button className="btn btn-dark">Modifier mon adresse email</button>
@@ -67,7 +50,7 @@ export default function Home() {
           </thead>
           <tbody>
             <tr>
-              <th scope="row">Clio 4{data.modele}</th>
+              <th scope="row">Clio 4</th>
               <td>150€</td>
               <td>04/09/2022</td>
               <td>
