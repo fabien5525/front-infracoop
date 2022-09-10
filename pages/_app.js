@@ -1,17 +1,47 @@
 import "../styles/globals.css";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 //import boostrap
 import "bootstrap/dist/css/bootstrap.min.css";
+
+const LisLogin = () => {
+
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const token = localStorage.getItem("token");
+      if (token) {
+        setIsLogin(true);
+      }
+    }
+  }, []);
+
+  if (isLogin) return <></>;
+
+  return <>
+    <li className="nav-item">
+      <Link href="/connexion">
+        <a className="nav-link">Connexion</a>
+      </Link>
+    </li>
+    <li className="nav-item">
+      <Link href="/inscription">
+        <a className="nav-link">Inscription</a>
+      </Link>
+    </li>
+  </>
+
+}
 
 const Header = () => {
   return (
     <>
       <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
-          <Image className="logo-picture"  src="/logo.ico" alt="logo" width="32" height="32"></Image>
+          <Image className="logo-picture" src="/logo.ico" alt="logo" width="32" height="32"></Image>
           <Link href="/">
             <a className="navbar-brand" >
               Infracoop
@@ -36,16 +66,7 @@ const Header = () => {
                   <a className="nav-link">Accueil</a>
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link href="/connexion">
-                  <a className="nav-link">Connexion</a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link href="/inscription">
-                  <a className="nav-link">Inscription</a>
-                </Link>
-              </li>
+              <LisLogin />
               <li className="nav-item">
                 <Link href="/liste_voiture">
                   <a className="nav-link">Liste de véhicules</a>
