@@ -39,7 +39,7 @@ Ajout véhicule : FAIT
 liste en location : A faire
 inscription : A faire
 liste vehicule : FAIT
-connexion : A faire
+connexion : FAIT
 modif_vehicule : A faire
 modif-mail : A faire
 modif mdp : A faire

@@ -6,6 +6,12 @@ import { useEffect, useState } from "react";
 //import boostrap
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const handleFermetureNavbarOnClickOnLink = () => {
+  if (typeof window !== "undefined") {
+    document.querySelector(".navbar-toggler").click();
+  }
+}
+
 const LisLogin = () => {
 
   const [isLogin, setIsLogin] = useState(false);
@@ -24,12 +30,12 @@ const LisLogin = () => {
   return <>
     <li className="nav-item">
       <Link href="/connexion">
-        <a className="nav-link">Connexion</a>
+        <a className="nav-link" onClick={() => handleFermetureNavbarOnClickOnLink()}>Connexion</a>
       </Link>
     </li>
     <li className="nav-item">
       <Link href="/inscription">
-        <a className="nav-link">Inscription</a>
+        <a className="nav-link" onClick={() => handleFermetureNavbarOnClickOnLink()}>Inscription</a>
       </Link>
     </li>
   </>
@@ -37,13 +43,14 @@ const LisLogin = () => {
 }
 
 const Header = () => {
+
   return (
     <>
       <nav className="navbar navbar-dark bg-dark">
         <div className="container-fluid">
           <Image className="logo-picture" src="/logo.ico" alt="logo" width="32" height="32"></Image>
-          <Link href="/">
-            <a className="navbar-brand" >
+          <Link href="/" >
+            <a className="navbar-brand" onClick={() => handleFermetureNavbarOnClickOnLink()}>
               Infracoop
             </a>
           </Link>
@@ -62,19 +69,19 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link href="/">
-                  <a className="nav-link">Accueil</a>
+                <Link href="/" >
+                  <a className="nav-link" onClick={() => handleFermetureNavbarOnClickOnLink()}>Accueil</a>
                 </Link>
               </li>
               <LisLogin />
               <li className="nav-item">
                 <Link href="/liste_voiture">
-                  <a className="nav-link">Liste de véhicules</a>
+                  <a className="nav-link" onClick={() => handleFermetureNavbarOnClickOnLink()}>Liste de véhicules</a>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link href="/profil">
-                  <a className="nav-link">Mon Profil</a>
+                  <a className="nav-link" onClick={() => handleFermetureNavbarOnClickOnLink()}>Mon Profil</a>
                 </Link>
               </li>
             </ul>
