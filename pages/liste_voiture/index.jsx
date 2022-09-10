@@ -1,7 +1,60 @@
 import Link from "next/link";
-import Image from "next/image";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+// type vehicule = {
+//   Couleur: string;
+//   DateDAchat: date;
+//   Disponible: boolean;
+//   EnCoursDeLocation: boolean;
+//   Kilometre: number
+//   Marque: string;
+//   Modele: string;
+//   NumeroDeSerie: string;
+//   PlaqueDImmatriculation: string;
+//   PrixDAchat: 98
+//   Type: string;
+//   couleur: string;
+//   dateDAchat: string;
+//   disponible: false
+//   enCoursDeLocation: false
+//   id: 1
+//   kilometre: 26
+//   locations: Array
+//   marque: string;
+//   modele: string;
+//   numeroDeSerie: string;
+//   plaqueDImmatriculation: string;
+//   prixDAchat: Number;
+//   type: string;
+// }
 
 const Liste = () => {
+  const [Vehicules, setVehicules] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://www.5525.fr/vehicules", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response.data[0]);
+        setVehicules(response.data);
+      });
+  }, []);
+
+  const handleDelete = (id) => {
+    if (confirm("Êtes-vous sûr ?")) {
+      axios.delete(`http://www.5525.fr/vehicules/${id}`).catch((error) => {
+        //delete ko
+        console.error(error);
+      });
+    }
+  };
+
   return (
     <>
       <div className="listeVehicule">
@@ -27,60 +80,40 @@ const Liste = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Renault</td>
-              <td>Clio 4</td>
-              <td>Bleu</td>
-              <td>AB 123 CD</td>
-              <td>10 000 Km</td>
-              <td>15€</td>
-              <td>
-                <div id="disponible"></div>
-              </td>
-              <td>
-                <Link href={"/reserver_vehicule"}>
-                  <button className="btn btn-dark">Reserver</button>
-                </Link>
-              </td>
-              <td>
-                <Link href={"/modif_vehicule"}>
-                <button className="btn btn-dark">Modifier</button>
-                </Link>
-              </td>
-              <td>
-                <Link href={"/suppr_vehicule"}>
-                <button className="btn btn-dark">Supprimer</button>
-                </Link>
-              </td>
-            </tr>
-            <tr>
-              <td>Peugeot</td>
-              <td>205</td>
-              <td>Grise</td>
-              <td>AB 124 CD</td>
-              <td>15 000 Km</td>
-              <td>5€</td>
-              <td>
-                <div id="occupe"></div>
-              </td>
-              <td>
-                <button className="btn btn-outline-black" disabled>
-                  Reserver
-                </button>
-              </td>
-              <td>
-              <Link href={"/modif_vehicule"}>
-              <button className="btn btn-dark">
-                Modifier
-              </button>
-              </Link>
-              </td>
-              <td>
-              <Link href={"/suppr_vehicule"}>
-                <button className="btn btn-dark">Supprimer</button>
-              </Link>
-              </td>
-            </tr>
+            {Vehicules &&
+              Vehicules.map((vehicule) => {
+                return (
+                  <tr key={`vehicule-${vehicule.id}`}>
+                    <td>{vehicule.Marque}</td>
+                    <td>{vehicule.Modele}</td>
+                    <td>{vehicule.Couleur}</td>
+                    <td>{vehicule.PlaqueDImmatriculation}</td>
+                    <td>{`${vehicule.Kilometre} Km`}</td>
+                    <td>{`${vehicule.prixDAchat} €`}</td>
+                    <td>
+                      <div id="disponible"></div>
+                    </td>
+                    <td>
+                      <Link href={`/reserver_vehicule/${vehicule.id}`}>
+                        <button className="btn btn-dark">Reserver</button>
+                      </Link>
+                    </td>
+                    <td>
+                      <Link href={`/modif_vehicule/${vehicule.id}`}>
+                        <button className="btn btn-dark">Modifier</button>
+                      </Link>
+                    </td>
+                    <td>
+                      <button
+                        className="btn btn-dark"
+                        onClick={() => handleDelete(vehicule.id)}
+                      >
+                        Supprimer
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </table>
       </div>
