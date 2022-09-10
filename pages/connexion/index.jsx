@@ -23,6 +23,7 @@ const Connexion = () => {
       .then((response) => {
         console.log(response.data);
         localStorage.setItem("token", response.data.token);
+        window.location.href = "/";
       })
       .catch((error) => {
         console.error("axios err", error);

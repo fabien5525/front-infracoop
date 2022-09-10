@@ -12,6 +12,13 @@ const handleFermetureNavbarOnClickOnLink = () => {
   }
 }
 
+const handleDeconnexion = () => {
+  if (typeof window !== "undefined") {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  }
+}
+
 const LisLogin = () => {
 
   const [isLogin, setIsLogin] = useState(false);
@@ -25,7 +32,11 @@ const LisLogin = () => {
     }
   }, []);
 
-  if (isLogin) return <></>;
+  if (isLogin) return <>
+  <li className="nav-item">
+        <a className="nav-link" onClick={() => handleDeconnexion()}>Déconnexion</a>
+    </li>
+  </>;
 
   return <>
     <li className="nav-item">
@@ -73,7 +84,7 @@ const Header = () => {
                   <a className="nav-link" onClick={() => handleFermetureNavbarOnClickOnLink()}>Accueil</a>
                 </Link>
               </li>
-              <LisLogin />
+
               <li className="nav-item">
                 <Link href="/liste_voiture">
                   <a className="nav-link" onClick={() => handleFermetureNavbarOnClickOnLink()}>Liste de véhicules</a>
@@ -84,6 +95,7 @@ const Header = () => {
                   <a className="nav-link" onClick={() => handleFermetureNavbarOnClickOnLink()}>Mon Profil</a>
                 </Link>
               </li>
+              <LisLogin />
             </ul>
           </div>
         </div>

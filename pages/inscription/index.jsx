@@ -31,19 +31,25 @@ const Inscritpion = () => {
             email: email,
             password: password,
             Client: {
-              nom: nom,
-              prenom: prenom,
-              date: date,
-              adresse: adresse,
-              telephone: telephone,
-              permis: permis,
+              Nom: nom,
+              Prenom: prenom,
+              DateDeNaissance: date,
+              Adresse: adresse,
+              Telephone: telephone,
+              NumeroDePermis: permis,
+            },
+          }, {
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json",
             },
           })
           .then((response) => {
-            console.log(response.status, response.data);
+            window.location.href = "/connexion";
           })
           .catch((error) => {
             console.error(error);
+            //maybe email déjà pris
           });
       }
     }
