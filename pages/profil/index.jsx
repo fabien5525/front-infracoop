@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-    .get("http://www.5525.fr/clients/2", {
+    .get("http://www.5525.fr/clients/6", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -28,7 +28,7 @@ export default function Home() {
         <br />
         <h3> {Profil.Nom} {Profil.Prenom}</h3>
         {/* <p>Email: {Profil.email}</p> */}
-        <p>Email: john.doe@test.fr</p>
+        <p>Email: a.brunet@ecole-ipssi.net</p>
         <p>Votre adresse : {Profil.Adresse}</p>
         <br />
         <Link href={"/modif-mail"}>

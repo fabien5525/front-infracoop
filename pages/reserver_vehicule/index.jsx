@@ -45,7 +45,7 @@ const ReserverVehicule = () => {
           </thead>
           <tbody>
             <td>
-              <Image src="/clio.jpg" alt="logo-picture" width={100} layout="fill"/>
+              
             </td>
             <td>AB 123 CD</td>
             <td>15€</td>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 
-const modif_vehicule = () => {
+const Modif_vehicule = () => {
   const [Vehicules, setVehicules] = useState([]);
   const [Marque, setMarque] = useState("");
   const [Modele, setModele] = useState("");
@@ -197,4 +197,4 @@ const modif_vehicule = () => {
   );
 };
 
-export default modif_vehicule;
+export default Modif_vehicule;

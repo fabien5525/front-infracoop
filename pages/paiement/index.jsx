@@ -1,8 +1,8 @@
 const Paiement = () => {
     return ( <>
         <section>
-      <div class="table">
-        <div class="description">
+      <div className="table">
+        <div className="description">
           <h3>Somme à payer</h3>
           <h5>10 000 €</h5>
         </div>
